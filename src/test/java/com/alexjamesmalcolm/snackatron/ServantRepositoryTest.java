@@ -72,4 +72,19 @@ public class ServantRepositoryTest {
         Servant firstServant = servants.get(0);
         assertThat(firstServant.getName(), is("Joey"));
     }
+
+    @Test
+    public void shouldRetrieveOnlyJoeySinceHeServedTheEarliest() throws InterruptedException {
+        Servant jim = new Servant("Jim");
+        Servant joey = new Servant("Joey");
+        joey.updateMostRecentService();
+        Thread.sleep(1);
+        jim.updateMostRecentService();
+        underTest.save(jim);
+        underTest.save(joey);
+        em.flush();
+        em.clear();
+        Servant earliestServant = underTest.findFirstByOrderByLastServiceAsc();
+        assertThat(earliestServant.getName(), is("Joey"));
+    }
 }

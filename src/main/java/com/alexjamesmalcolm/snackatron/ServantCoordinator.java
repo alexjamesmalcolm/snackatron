@@ -2,13 +2,12 @@ package com.alexjamesmalcolm.snackatron;
 
 import javax.annotation.Resource;
 
-public class ServantCoordinator {
+class ServantCoordinator {
 
     @Resource
     private ServantRepository servantRepo;
 
-    public Servant whoHasNotServedRecently() {
-//        servants = servantRepo.findAll();
-        return null;
+    Servant whoHasNotServedRecently() {
+        return servantRepo.findFirstByOrderByLastServiceAsc();
     }
 }

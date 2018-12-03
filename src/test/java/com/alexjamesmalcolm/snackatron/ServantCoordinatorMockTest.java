@@ -17,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 
-public class ServantCoordinatorTest {
+public class ServantCoordinatorMockTest {
 
     @Mock
     private ServantRepository servantRepo;

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ServantRepository extends CrudRepository<Servant, Long> {
     List<Servant> findAllByOrderByLastServiceAsc();
+
+    Servant findFirstByOrderByLastServiceAsc();
 }
