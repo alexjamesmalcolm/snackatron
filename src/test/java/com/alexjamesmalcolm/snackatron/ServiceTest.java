@@ -1,6 +1,5 @@
 package com.alexjamesmalcolm.snackatron;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -10,7 +9,6 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Set;
 
-import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
