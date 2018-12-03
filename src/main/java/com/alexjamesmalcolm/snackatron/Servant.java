@@ -16,25 +16,26 @@ public class Servant {
 
     private String name;
 
+    @SuppressWarnings("unused")
     private Servant() {}
 
-    public Servant(String name) {
+    Servant(String name) {
         this.name = name;
     }
 
-    public Instant mostRecentService() {
-        return null;
+    public Instant getLastService() {
+        return lastService;
     }
 
-    public long getId() {
+    long getId() {
         return id;
     }
 
-    public void updateMostRecentService() {
+    void updateMostRecentService() {
         lastService = Instant.now();
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 }
